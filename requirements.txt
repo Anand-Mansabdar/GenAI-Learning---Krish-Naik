@@ -3,3 +3,6 @@ ipykernel
 langchain
 langchain-mistralai
 langchain-huggingface
+beautifulsoup4
+langchain-community
+faiss-cpu
