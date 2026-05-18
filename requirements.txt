@@ -1,6 +1,7 @@
 dotenv
 ipykernel
 langchain
+langchain-classic
 langchain-mistralai
 langchain-huggingface
 beautifulsoup4
