@@ -9,3 +9,7 @@ beautifulsoup4
 langchain-community
 langchain-core
 faiss-cpu
+fastapi
+uvicorn
+langserve
+sse_starlette
