@@ -4,6 +4,8 @@ langchain
 langchain-classic
 langchain-mistralai
 langchain-huggingface
+langchain-groq
 beautifulsoup4
 langchain-community
+langchain-core
 faiss-cpu
