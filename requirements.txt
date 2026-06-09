@@ -4,6 +4,7 @@ langchain
 langchain-classic
 langchain-mistralai
 langchain-huggingface
+langchain-chroma
 langchain-groq
 beautifulsoup4
 langchain-community
@@ -14,3 +15,5 @@ uvicorn
 langserve
 sse_starlette
 transformers
+sentence-transformers
+torch
