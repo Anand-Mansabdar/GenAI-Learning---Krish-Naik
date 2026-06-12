@@ -17,3 +17,4 @@ sse_starlette
 transformers
 sentence-transformers
 torch
+bs4
