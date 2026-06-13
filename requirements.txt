@@ -4,6 +4,8 @@ langchain
 langchain-classic
 langchain-mistralai
 langchain-huggingface
+langchain-google-genai
+langchain-openai
 langchain-chroma
 langchain-groq
 beautifulsoup4
