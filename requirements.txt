@@ -21,3 +21,5 @@ sentence-transformers
 torch
 bs4
 pydantic
+streamlit
+groq
