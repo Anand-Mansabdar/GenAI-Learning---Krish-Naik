@@ -24,3 +24,7 @@ pydantic
 streamlit
 groq
 pypdf
+
+# To use tools provided by langchain
+arxiv
+wikipedia
