@@ -7,6 +7,7 @@ from langchain_classic.sql_database import SQLDatabase
 from langchain_classic.callbacks import StreamlitCallbackHandler
 from langchain_classic.agents.agent_toolkits import SQLDatabaseToolkit
 from sqlalchemy import create_engine
+from langchain_classic.agents import initialize_agent, AgentType
 
 
 st.title("Langchain Project: Chat with an SQL Database")
@@ -60,3 +61,32 @@ if db_uri == MYSQL:
   db = configure_db(db_uri, db_host=mysql_host,db_user=mysql_user, db_password=mysql_password, mysql_db=mysql_db)
 else:
   db = configure_db(db_uri)
+  
+  
+toolkit = SQLDatabaseToolkit(db=db, llm=llm)
+
+agent = create_sql_agent(
+  llm=llm, toolkit=toolkit, verbose=True,
+  agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION
+)
+
+if "messages" not in st.session_state or st.sidebar.button("Clear message history"):
+  st.session_state["messages"] = [{
+    "role": "assistant",
+    "content": "How can I help you?"
+  }]
+
+for msg in st.session_state.messages:
+  st.chat_message(msg["role"]).write(msg["content"])
+
+user_query = st.chat_input(placeholder="Ask anything regarding the database...")
+
+if user_query:
+  st.session_state.messages.append({"role": "user", "content": user_query})
+  st.chat_message("user").write(user_query)
+  
+  with st.chat_message("assistant"):
+    callback = StreamlitCallbackHandler(st.container())
+    response = agent.run(user_query, callbacks=[callback])
+    st.session_state.messages.append({"role": "assistant", "content": response})
+    st.write(response)

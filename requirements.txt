@@ -28,3 +28,7 @@ pypdf
 # To use tools provided by langchain
 arxiv
 wikipedia
+
+# To use SQLite - 9
+mysql-connector-python
+SQLAlchemy
