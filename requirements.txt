@@ -32,3 +32,9 @@ wikipedia
 # To use SQLite - 9
 mysql-connector-python
 SQLAlchemy
+
+# To validate the URLs - 11
+validators==0.28.1
+youtube_transcript_api
+unstructured
+pytube
