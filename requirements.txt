@@ -41,3 +41,8 @@ pytube
 
 # For 12
 numexpr
+
+# For AstraDB
+cassio
+datasets
+tiktoken
