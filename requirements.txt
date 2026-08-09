@@ -46,3 +46,8 @@ numexpr
 cassio
 datasets
 tiktoken
+
+# For MultiLanguage Code assistant
+gradio
+
+langchain_nvidia_ai_endpoints
